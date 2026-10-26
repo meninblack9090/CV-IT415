@@ -8,7 +8,7 @@ This project is a responsive personal CV and portfolio website for Justin Adam C
 
 - **Student name:** Justin Adam C. Umalay
 - **Project title:** Justin Adam C. Umalay - Personal CV Website
-- **Live website:** Not deployed yet
+- **Live website:** (https://umalay-cv-it415.vercel.app/)
 
 > Update the live website value above after deploying the project to Vercel.
 
