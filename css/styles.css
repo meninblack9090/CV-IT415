@@ -141,6 +141,23 @@ body {
   overflow-x: hidden;
 }
 
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  padding: .65rem 1rem;
+  background: var(--button-bg);
+  color: var(--button-ink);
+  border-radius: .4rem;
+  transform: translateY(-180%);
+  transition: transform .2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 img,svg {
   max-width: 100%;
   display: block;
