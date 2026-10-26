@@ -85,3 +85,13 @@ node tests/browser-theme.cjs
 ## Deployment
 
 This project can be deployed directly as a static site on Vercel. Import the GitHub repository in the Vercel dashboard, leave the framework preset as **Other**, keep the build command empty, and use `.` as the output directory if Vercel asks for one. Vercel will provide the production URL after deployment.
+
+## Development workflow
+
+The repository history records the project in incremental stages, including accessibility improvements, interaction updates, automated checks, performance work, and documentation. To inspect the development process:
+
+```bash
+git log --oneline --decorate --graph
+```
+
+Before submitting, confirm that the GitHub repository contains the complete source code, the tests pass, and the README has been updated with the final Vercel URL.
