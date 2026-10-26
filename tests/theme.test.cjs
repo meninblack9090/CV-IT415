@@ -148,3 +148,12 @@ test('the first-paint script precedes CSS and the toggle contains both inline SV
   assert(button.includes('class="theme-icon-moon"'));
   assert(button.includes('class="theme-icon-sun"'));
 });
+
+test('provides keyboard navigation and accessible contact form metadata', () => {
+  const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
+  assert(html.includes('class="skip-link" href="#main-content"'));
+  assert(html.includes('<main id="main-content">'));
+  assert(html.includes('aria-describedby="contact-form-note"'));
+  assert(html.includes('inputmode="email"'));
+  assert(html.includes('spellcheck="true"'));
+});
