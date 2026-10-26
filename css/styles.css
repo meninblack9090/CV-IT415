@@ -158,6 +158,13 @@ body {
   transform: translateY(0);
 }
 
+.noscript-message {
+  padding: .75rem 1rem;
+  background: var(--accent);
+  color: var(--on-accent);
+  text-align: center;
+}
+
 img,svg {
   max-width: 100%;
   display: block;
