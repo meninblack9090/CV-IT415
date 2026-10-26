@@ -65,12 +65,31 @@
     menuButton.addEventListener('click', () => {
       const isOpen = menu.classList.toggle('open');
       menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
     });
 
     menu.addEventListener('click', event => {
       if (event.target.tagName !== 'A') return;
       menu.classList.remove('open');
       menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open menu');
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape' || !menu.classList.contains('open')) return;
+      menu.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open menu');
+      menuButton.focus();
+    });
+
+    document.addEventListener('click', event => {
+      if (!menu.classList.contains('open')
+          || menu.contains(event.target)
+          || menuButton.contains(event.target)) return;
+      menu.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open menu');
     });
 
     window.addEventListener('scroll', updateNavigation, { passive: true });
