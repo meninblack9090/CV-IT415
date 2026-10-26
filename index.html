@@ -328,14 +328,14 @@ I am currently learning and improving my skills in Web Development, Mobile App D
             <a class="btn ghost" href="https://github.com/meninblack9090" target="_blank" rel="noopener">View GitHub</a>
             <a class="btn ghost" href="https://www.facebook.com/justin.umalay" target="_blank" rel="noopener">Message on Facebook</a>
           </div>
-          <form class="contact-form" id="contact-form" aria-labelledby="contact-form-heading" hidden>
+          <form class="contact-form" id="contact-form" aria-labelledby="contact-form-heading" aria-describedby="contact-form-note" hidden>
             <h3 id="contact-form-heading">Write me a message</h3>
-            <p class="contact-form-note">This opens a draft in your email app. You review and send the message there.</p>
+            <p class="contact-form-note" id="contact-form-note">This opens a draft in your email app. You review and send the message there.</p>
             <div class="contact-fields">
               <label>Your name<input name="name" autocomplete="name" maxlength="80" required></label>
-              <label>Your email<input name="email" type="email" autocomplete="email" maxlength="254" required></label>
-              <label class="contact-field-wide">Subject<input name="subject" maxlength="120" required></label>
-              <label class="contact-field-wide">Message<textarea name="message" rows="5" maxlength="2000" required></textarea></label>
+              <label>Your email<input name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" required></label>
+              <label class="contact-field-wide">Subject<input name="subject" autocomplete="off" maxlength="120" required></label>
+              <label class="contact-field-wide">Message<textarea name="message" rows="5" maxlength="2000" spellcheck="true" required></textarea></label>
             </div>
             <div><button class="btn main" type="submit">Open email draft</button></div>
             <p class="contact-form-note">Email: <a href="mailto:umalay.justin@dnsc.edu.ph">umalay.justin@dnsc.edu.ph</a></p>
