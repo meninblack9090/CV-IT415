@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Umalay | Web Development & Design Portfolio</title>
+    <meta name="description" content="Personal CV website of Justin Adam C. Umalay, a BSIT student at Davao del Norte State College.">
+    <script id="theme-init">
+      (() => {
+        let savedTheme;
+        try { savedTheme = window.localStorage.getItem('cv-theme'); } catch {}
+        document.documentElement.dataset.theme = savedTheme === 'light' || savedTheme === 'dark'
+          ? savedTheme
+          : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/theme.js" defer></script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <div id="loader" aria-hidden="true">
+      <span>&lt;JU/&gt;</span>
+    </div>
+    <header id="top">
+      <nav class="wrap" aria-label="Main navigation">
+        <a class="logo" href="#home">UMA<b>LAY</b></a>
+        <ul class="links" id="links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+            <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M20.9 13.1A9 9 0 0 1 10.9 3.1a9 9 0 1 0 10 10Z"/>
+            </svg>
+            <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>
+            </svg>
+          </button>
+          <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="links">
+            &#9776;
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="hero" id="home">
+        <div class="wrap">
+          <div>
+            <p class="role" id="role" aria-label="Information Technology Student"></p>
+            <h1>Hi, I'm <span>Justin Adam C. Umalay</span></h1>
+            <p class="intro">I'm a Bachelor of Science in Information Technology (BSIT) student at Davao del Norte State College. I am passionate about technology and continuously expanding my knowledge by building projects and exploring new tools in the field of software development.
+
+I am currently learning and improving my skills in Web Development, Mobile App Development, Software Development, and UI/UX Design. I enjoy creating applications that are not only functional but also user-friendly and visually appealing.</p>
+            <div class="hero-actions">
+              <a class="btn main" href="#portfolio">See my projects</a>
+              <a class="btn ghost" href="#contact">Hire me</a>
+            </div>
+            <ul class="hero-social" aria-label="Social profiles" role="list">
+              <li><a class="social-link" href="https://github.com/meninblack9090" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" title="GitHub"><span class="social-icon social-icon-github" aria-hidden="true"></span></a></li>
+              <!-- TODO: replace with your real LinkedIn URL -->
+              <li><a class="social-link" href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" title="LinkedIn"><span class="social-icon social-icon-linkedin" aria-hidden="true"></span></a></li>
+              <li><a class="social-link" href="https://www.facebook.com/justin.umalay" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile" title="Facebook"><span class="social-icon social-icon-facebook" aria-hidden="true"></span></a></li>
+              <li><a class="social-link" href="https://www.instagram.com/dedust_adam/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile" title="Instagram"><span class="social-icon social-icon-instagram" aria-hidden="true"></span></a></li>
+            </ul>
+          </div>
+          <div class="photo" id="profile-photo">
+            <div class="profile-image-frame">
+              <img src="assets/profile.jpg" alt="Portrait of Justin Adam C. Umalay">
+              <svg viewBox="0 0 200 200" role="img" aria-label="Profile picture placeholder"><circle cx="100" cy="78" r="38" fill="currentColor"/><path d="M24 190c6-44 38-62 76-62s70 18 76 62z" fill="currentColor"/></svg>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about">
+        <div class="wrap">
+          <h2 class="reveal">About me</h2>
+          <p class="lead reveal">Who I am and where I'm headed.</p>
+          <div class="about reveal">
+            <div class="card">
+              <h3>Personal description</h3>
+              <p>I'm passionate about technology and keep growing by building projects and trying new tools in software development. I enjoy making applications that are both useful and easy to use.</p>
+              <p class="description-followup">I'm committed to continuous learning, solving real-world problems with technology, and collaborating with others as I work toward becoming a skilled software developer.</p>
+              <p class="objective"><strong>Career objective:</strong> To become a skilled software developer who builds innovative digital solutions, and to grow through internships and real projects.</p>
+              <h3 class="interests-heading">Career interests</h3>
+              <div class="tags">
+                <span class="tag">Web Development</span><span class="tag">Mobile App Development</span><span class="tag">Software Development</span><span class="tag">UI/UX Design</span>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Basic information</h3>
+              <ul class="personal-info">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
+                  <span><strong>Age:</strong> 22 years old</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                  <span><strong>Address:</strong> Prk 1, Canatan, Asuncion, Davao del Norte, Philippines</span>
+                </li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:umalay.justin@dnsc.edu.ph">umalay.justin@dnsc.edu.ph</a></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>+63 991 735 5234</li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true" focusable="false"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5 9 9 0 01-4-.9L3 21l1.9-5.5a9 9 0 01-.9-4A8.5 8.5 0 0112.5 3H13a8.5 8.5 0 018 8v.5z"/></svg>
+                  <span><strong>Languages:</strong> Tagalog, Bisaya, and English</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-white" id="education">
+        <div class="wrap">
+          <h2 class="reveal">Education</h2>
+          <p class="lead reveal">My academic background.</p>
+          <div class="timeline reveal">
+            <div class="timeline-item">
+              <span class="timeline-date">Elementary</span>
+              <h3>Maryknoll School of Maniki, Inc.</h3>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-date">High School</span>
+              <h3>Maryknoll School of Maniki, Inc.</h3>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-date">Senior High School</span>
+              <h3>Tagum National Trade School</h3>
+              <p>TVL-CSS</p>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-date">Present</span>
+              <h3>Bachelor of Science in Information Technology</h3>
+              <p>Davao del Norte State College</p>
+              <ul><li>Focus: web, mobile, and software development, plus UI/UX design</li></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="skills">
+        <div class="wrap">
+          <h2 class="reveal">Skills</h2>
+          <p class="lead reveal">What I'm learning and the strengths I bring to a team.</p>
+          <div class="skills reveal">
+            <div class="skill-areas">
+              <div>
+                <strong>Web Development</strong><span>Building responsive sites</span>
+              </div>
+              <div>
+                <strong>Mobile App Development</strong><span>Apps for phones</span>
+              </div>
+              <div>
+                <strong>Software Development</strong><span>Programming and problem solving</span>
+              </div>
+              <div>
+                <strong>UI/UX Design</strong><span>Clean, user-friendly interfaces</span>
+              </div>
+            </div>
+            <div class="technology-icons" role="group" aria-labelledby="tools-heading">
+              <h3 id="tools-heading">Tools and technologies</h3>
+              <!-- Add or remove logos in the relevant logo-set below. Keep BOTH copies in each row identical; the second copy is hidden from assistive technology. -->
+              <div class="logo-row">
+                <div class="logo-track">
+                  <ul class="logo-set" role="list" aria-label="Development languages and frameworks">
+                    <li class="technology-logo" tabindex="0" title="HTML5"><img src="assets/icons/html5.svg" alt="HTML5" width="40" height="40"></li>
+                    <li class="technology-logo" tabindex="0" title="CSS3"><img src="assets/icons/css3.svg" alt="CSS3" width="40" height="40"></li>
+                    <li class="technology-logo" tabindex="0" title="JavaScript"><img src="assets/icons/javascript.svg" alt="JavaScript" width="40" height="40"></li>
+                    <li class="technology-logo" tabindex="0" title="Python"><img src="assets/icons/python.svg" alt="Python" width="40" height="40"></li>
+                    <li class="technology-logo" tabindex="0" title="Java"><img src="assets/icons/java.svg" alt="Java" width="40" height="40"></li>
+                    <li class="technology-logo" tabindex="0" title="PHP"><img src="assets/icons/php.svg" alt="PHP" width="40" height="40"></li>
+                    <li class="technology-logo" tabindex="0" title="React"><img src="assets/icons/react.svg" alt="React" width="40" height="40"></li>
+                    <li class="technology-logo" tabindex="0" title="Node.js"><img src="assets/icons/nodejs.svg" alt="Node.js" width="40" height="40"></li>
+                  </ul>
+                  <ul class="logo-set" role="list" aria-hidden="true">
+                    <li class="technology-logo" title="HTML5"><img src="assets/icons/html5.svg" alt="HTML5" width="40" height="40"></li>
+                    <li class="technology-logo" title="CSS3"><img src="assets/icons/css3.svg" alt="CSS3" width="40" height="40"></li>
+                    <li class="technology-logo" title="JavaScript"><img src="assets/icons/javascript.svg" alt="JavaScript" width="40" height="40"></li>
+                    <li class="technology-logo" title="Python"><img src="assets/icons/python.svg" alt="Python" width="40" height="40"></li>
+                    <li class="technology-logo" title="Java"><img src="assets/icons/java.svg" alt="Java" width="40" height="40"></li>
+                    <li class="technology-logo" title="PHP"><img src="assets/icons/php.svg" alt="PHP" width="40" height="40"></li>
+                    <li class="technology-logo" title="React"><img src="assets/icons/react.svg" alt="React" width="40" height="40"></li>
+                    <li class="technology-logo" title="Node.js"><img src="assets/icons/nodejs.svg" alt="Node.js" width="40" height="40"></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="logo-row logo-row-reverse">
+                <div class="logo-track">
+                  <ul class="logo-set" role="list" aria-label="Frameworks and development tools">
+                    <li class="technology-logo" tabindex="0" title="Laravel"><img src="assets/icons/laravel.svg" alt="Laravel" width="40" height="40"></li>
+                    <li class="technology-logo" tabindex="0" title="Django"><img src="assets/icons/django.svg" alt="Django" width="40" height="40"></li>
+                    <li class="technology-logo" tabindex="0" title="Flutter"><img src="assets/icons/flutter.svg" alt="Flutter" width="40" height="40"></li>
+                    <li class="technology-logo" tabindex="0" title="ChatGPT"><img src="assets/icons/chatgpt.svg" alt="ChatGPT" width="40" height="40"></li>
+                    <li class="technology-logo" tabindex="0" title="Claude"><img src="assets/icons/claude.svg" alt="Claude" width="40" height="40"></li>
+                    <li class="technology-logo" tabindex="0" title="GitHub Copilot"><img src="assets/icons/copilot.svg" alt="GitHub Copilot" width="40" height="40"></li>
+                    <li class="technology-logo" tabindex="0" title="Gemini"><img src="assets/icons/gemini.svg" alt="Gemini" width="40" height="40"></li>
+                    <li class="technology-logo" tabindex="0" title="GitHub"><img src="assets/icons/github.svg" alt="GitHub" width="40" height="40"></li>
+                  </ul>
+                  <ul class="logo-set" role="list" aria-hidden="true">
+                    <li class="technology-logo" title="Laravel"><img src="assets/icons/laravel.svg" alt="Laravel" width="40" height="40"></li>
+                    <li class="technology-logo" title="Django"><img src="assets/icons/django.svg" alt="Django" width="40" height="40"></li>
+                    <li class="technology-logo" title="Flutter"><img src="assets/icons/flutter.svg" alt="Flutter" width="40" height="40"></li>
+                    <li class="technology-logo" title="ChatGPT"><img src="assets/icons/chatgpt.svg" alt="ChatGPT" width="40" height="40"></li>
+                    <li class="technology-logo" title="Claude"><img src="assets/icons/claude.svg" alt="Claude" width="40" height="40"></li>
+                    <li class="technology-logo" title="GitHub Copilot"><img src="assets/icons/copilot.svg" alt="GitHub Copilot" width="40" height="40"></li>
+                    <li class="technology-logo" title="Gemini"><img src="assets/icons/gemini.svg" alt="Gemini" width="40" height="40"></li>
+                    <li class="technology-logo" title="GitHub"><img src="assets/icons/github.svg" alt="GitHub" width="40" height="40"></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-white" id="certificates">
+        <div class="wrap">
+          <h2 class="reveal">Certificates and achievements</h2>
+          <p class="lead reveal">Certifications and recognition I've earned through learning. Select one to view it in full.</p>
+          <div class="certificate-grid reveal">
+            <article class="certificate-card">
+              <button type="button" data-img="assets/wadhwani-ignite-certificate.png" data-alt="Wadhwani Foundation Ignite Philippines certificate" aria-label="View Wadhwani Ignite Philippines certificate in full">
+                <img src="assets/wadhwani-ignite-certificate.png" alt="Wadhwani Foundation Ignite Philippines certificate" loading="lazy">
+              </button>
+              <div class="certificate-body">
+                <h3>Ignite Philippines</h3>
+                <p>Wadhwani Foundation · May 27, 2026</p>
+                <span class="verified">Completed</span>
+              </div>
+            </article>
+            <article class="certificate-card">
+              <button type="button" data-img="assets/cisco-ccna-certificate.png" data-alt="Cisco CCNA: Switching, Routing, and Wireless Essentials certificate" aria-label="View Cisco CCNA certificate in full">
+                <img src="assets/cisco-ccna-certificate.png" alt="Cisco CCNA: Switching, Routing, and Wireless Essentials certificate" loading="lazy">
+              </button>
+              <div class="certificate-body">
+                <h3>CCNA: Switching, Routing, and Wireless Essentials</h3>
+                <p>Cisco Networking Academy · December 1, 2025</p>
+                <span class="verified">Completed</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="portfolio">
+        <div class="wrap">
+          <h2 class="reveal">My projects</h2>
+          <p class="lead reveal">A selection of my work in mobile apps, web interfaces, and cybersecurity.</p>
+          <div class="filters reveal" role="group" aria-label="Filter projects">
+            <button class="on" data-f="all">
+              All
+            </button>
+            <button data-f="web">
+              Web
+            </button>
+            <button data-f="mobile">
+              Mobile
+            </button>
+          </div>
+          <div class="projects reveal" id="projects">
+            <article class="project-card" data-t="mobile">
+              <a class="project-thumbnail-frame" href="assets/projects/ecowaste.png" target="_blank" rel="noopener" aria-label="View EcoWaste screenshot in full">
+                <img class="project-thumbnail" src="assets/projects/ecowaste.png" alt="EcoSort mobile waste-sorting dashboard" loading="lazy">
+              </a>
+              <div class="project-body">
+                <h3>EcoWaste</h3>
+                <p>A mobile waste-sorting interface with scanning, recycling categories, and activity summaries.</p>
+                <div class="tags"><span class="tag">Mobile App</span><span class="tag">Waste Sorting</span><span class="tag">Recycling</span></div>
+                <div class="project-links"><a href="assets/projects/ecowaste.png" target="_blank" rel="noopener">View screenshot</a></div>
+              </div>
+            </article>
+            <article class="project-card" data-t="web">
+              <a class="project-thumbnail-frame" href="assets/projects/dermalink.png" target="_blank" rel="noopener" aria-label="View DermaLink screenshot in full">
+                <img class="project-thumbnail" src="assets/projects/dermalink.png" alt="DermaLink skincare platform landing page" loading="lazy">
+              </a>
+              <div class="project-body">
+                <h3>DermaLink</h3>
+                <p>A skincare web interface featuring skin assessments and connections with specialists.</p>
+                <div class="tags"><span class="tag">Web App</span><span class="tag">Skincare</span><span class="tag">UI/UX</span></div>
+                <div class="project-links"><a href="assets/projects/dermalink.png" target="_blank" rel="noopener">View screenshot</a></div>
+              </div>
+            </article>
+            <article class="project-card" data-t="web">
+              <a class="project-thumbnail-frame" href="assets/projects/secureauth.png" target="_blank" rel="noopener" aria-label="View SecureAuth screenshot in full">
+                <img class="project-thumbnail" src="assets/projects/secureauth.png" alt="SecureAuth cybersecurity registration screen" loading="lazy">
+              </a>
+              <div class="project-body">
+                <h3>SecureAuth</h3>
+                <p>A cybersecurity authentication interface focused on registration, login, and password security.</p>
+                <div class="tags"><span class="tag">Web App</span><span class="tag">Cybersecurity</span><span class="tag">Authentication</span></div>
+                <div class="project-links"><a href="assets/projects/secureauth.png" target="_blank" rel="noopener">View screenshot</a></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section-white" id="experience">
+        <div class="wrap">
+          <h2 class="reveal">Experience</h2>
+          <p class="lead reveal">Academic and hands-on learning so far.</p>
+          <div class="timeline reveal">
+            <div class="timeline-item">
+              <span class="timeline-date">Grade 12</span>
+              <h3>On-the-Job Training (OJT) — Computer Shop</h3>
+              <p>On-the-job training at a computer shop during Grade 12.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-date">Present</span>
+              <h3>BSIT Student and Self-Directed Developer</h3>
+              <p>Building projects in web, mobile, and software development to apply what I learn in class.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <div class="wrap">
+          <h2 class="reveal">Contact me</h2>
+          <p class="lead reveal">Have a project in mind? Let's create something together.</p>
+          <div class="reveal">
+            <a class="btn main" id="email-toggle" href="mailto:umalay.justin@dnsc.edu.ph" aria-controls="contact-form" aria-expanded="false">Email me</a>
+            <a class="btn ghost" href="https://github.com/meninblack9090" target="_blank" rel="noopener">View GitHub</a>
+            <a class="btn ghost" href="https://www.facebook.com/justin.umalay" target="_blank" rel="noopener">Message on Facebook</a>
+          </div>
+          <form class="contact-form" id="contact-form" aria-labelledby="contact-form-heading" hidden>
+            <h3 id="contact-form-heading">Write me a message</h3>
+            <p class="contact-form-note">This opens a draft in your email app. You review and send the message there.</p>
+            <div class="contact-fields">
+              <label>Your name<input name="name" autocomplete="name" maxlength="80" required></label>
+              <label>Your email<input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+              <label class="contact-field-wide">Subject<input name="subject" maxlength="120" required></label>
+              <label class="contact-field-wide">Message<textarea name="message" rows="5" maxlength="2000" required></textarea></label>
+            </div>
+            <div><button class="btn main" type="submit">Open email draft</button></div>
+            <p class="contact-form-note">Email: <a href="mailto:umalay.justin@dnsc.edu.ph">umalay.justin@dnsc.edu.ph</a></p>
+            <p class="contact-form-note" id="contact-status" role="status" aria-live="polite"></p>
+            <a id="contact-draft-link" hidden>Open the prepared email draft again</a>
+          </form>
+        </div>
+      </section>
+    </main>
+    <div id="lightbox" aria-hidden="true">
+      <button type="button" aria-label="Close">
+        &times;
+      </button>
+      <img alt="">
+    </div>
+    <footer>&copy; <span id="yr"></span> Justin Adam C. Umalay. Built with HTML, CSS, and JavaScript. Hosted on Vercel.</footer>
+  </body>
+</html>
