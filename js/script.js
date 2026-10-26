@@ -16,6 +16,10 @@
       'Web Development Learner',
     ];
     const roleElement = document.getElementById('role');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      roleElement.textContent = roles[0];
+      return;
+    }
     let roleIndex = 0;
     let characterIndex = 0;
     let isDeleting = false;
