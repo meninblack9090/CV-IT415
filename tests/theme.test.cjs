@@ -156,4 +156,6 @@ test('provides keyboard navigation and accessible contact form metadata', () => 
   assert(html.includes('aria-describedby="contact-form-note"'));
   assert(html.includes('inputmode="email"'));
   assert(html.includes('spellcheck="true"'));
+  assert(html.includes('role="dialog" aria-modal="true"'));
+  assert(html.includes('<noscript>'));
 });
