@@ -4,6 +4,7 @@
   --alt: #fff1d4;
   --card: #ffffff;
   --technology-surface: var(--card);
+  --orbit-surface: #ffffff;
   --ink: #12332e;
   --muted: #4d6560;
   --line: #efdfbd;
@@ -446,9 +447,15 @@ nav {
 }
 
 .photo {
+  --photo-size: min(300px,70vw);
+  --orbit-icon-size: 46px;
+  --orbit-duration: 32s;
+  --orbit-radius: calc(var(--photo-size) / 2 + 14px + 10px + var(--orbit-icon-size) / 2);
+  --orbit-space: calc(14px + 10px + var(--orbit-icon-size) * 1.1 + 4px);
   justify-self: center;
   position: relative;
-  width: min(300px,70vw);
+  width: var(--photo-size);
+  margin: var(--orbit-space);
 }
 
 .photo::before {
@@ -464,6 +471,56 @@ nav {
   to {
     transform: rotate(360deg);
   }
+}
+
+.tech-orbit {
+  position: absolute;
+  inset: 0;
+  list-style: none;
+  pointer-events: none;
+  animation: spin var(--orbit-duration) linear infinite;
+}
+
+.tech-orbit li {
+  --a: 0deg;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--orbit-icon-size);
+  height: var(--orbit-icon-size);
+  margin: calc(var(--orbit-icon-size) / -2);
+  transform: rotate(var(--a)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--a)));
+  pointer-events: auto;
+}
+
+.tech-orbit span {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--orbit-surface);
+  box-shadow: 0 4px 14px var(--shadow-soft);
+  animation: spin var(--orbit-duration) linear infinite reverse;
+}
+
+.photo .tech-orbit img {
+  width: 65%;
+  height: 65%;
+  object-fit: contain;
+  transform: none;
+  transform-origin: center;
+  transition: transform .2s ease;
+}
+
+.tech-orbit li:hover img {
+  transform: scale(1.2);
+}
+
+.photo:hover::before,
+.photo:hover .tech-orbit,
+.photo:hover .tech-orbit span {
+  animation-play-state: paused;
 }
 
 .photo svg {
@@ -1184,8 +1241,8 @@ footer {
     grid-template-columns: 1fr;
   }
   .photo {
+    --photo-size: min(220px,55vw,calc(100vw - 2.5rem - var(--orbit-space) * 2));
     order: -1;
-    width: min(220px,55vw);
   }
   .projects {
     grid-template-columns: 1fr 1fr;
@@ -1193,6 +1250,9 @@ footer {
 }
 
 @media (max-width:640px) {
+  .photo {
+    --orbit-icon-size: 34px;
+  }
   .contact-fields {
     grid-template-columns: 1fr;
   }

@@ -334,7 +334,7 @@ async function main() {
       }
       await evaluate('document.querySelector(".certificate-card button").click()');
       assert.equal(await evaluate('document.getElementById("lightbox").getAttribute("aria-hidden")'), 'false');
-      assert(await evaluate('document.querySelector("#lightbox img").src.endsWith("wadhwani-ignite-certificate.png")'));
+      assert(await evaluate('document.querySelector("#lightbox img").src === new URL(document.querySelector(".certificate-card button").dataset.img, location.href).href'));
       await evaluate('window.dispatchEvent(new KeyboardEvent("keydown", {key:"Escape"}))');
       assert.equal(await evaluate('document.getElementById("lightbox").getAttribute("aria-hidden")'), 'true');
       await evaluate('document.querySelector(".filters button[data-f=mobile]").click()');
